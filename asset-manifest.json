@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/time-converter/static/css/main.19359e67.css",
+    "main.js": "/time-converter/static/js/main.c958a654.js",
+    "index.html": "/time-converter/index.html",
+    "main.19359e67.css.map": "/time-converter/static/css/main.19359e67.css.map",
+    "main.c958a654.js.map": "/time-converter/static/js/main.c958a654.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19359e67.css",
+    "static/js/main.c958a654.js"
+  ]
+}
