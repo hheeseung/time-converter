@@ -1,46 +1,46 @@
 import { useState } from "react";
 import "./Converter.css";
 
-function TimeConverter() {
-  const [time, setTime] = useState("");
-  const onChange = (event) => setTime(event.target.value);
+function DistanceConverter() {
+  const [distance, setDistance] = useState("");
+  const onChange = (event) => setDistance(event.target.value);
 
-  const reset = () => setTime("");
+  const onReset = () => setDistance("");
 
   const [invert, setInvert] = useState(false);
   const onClick = () => {
-    setTime(0);
+    onReset();
     setInvert((current) => !current);
   };
   return (
     <div className="converter-container">
-      <h1>Time Converter</h1>
+      <h1>Distance Converter</h1>
       <div className="value-container">
-        <label>Minutes:</label>
+        <label>Kilometers:</label>
         <input
-          value={invert ? time * 60 : time}
+          value={invert ? (distance / 1000).toFixed(3) : distance}
           onChange={onChange}
           type="number"
-          placeholder="Minutes"
+          placeholder="Kilometers"
           disabled={invert}
         />
       </div>
       <div className="value-container">
-        <label>Hours:</label>
+        <label>Meters:</label>
         <input
-          value={invert ? time : (time / 60).toFixed(1)}
-          type="number"
-          placeholder="Hours"
           onChange={onChange}
+          value={invert ? distance : distance * 1000}
+          type="number"
+          placeholder="Meters"
           disabled={!invert}
         />
       </div>
       <div className="button-container">
         <button onClick={onClick}>Invert</button>
-        <button onClick={reset}>Reset</button>
+        <button onClick={onReset}>Reset</button>
       </div>
     </div>
   );
 }
 
-export default TimeConverter;
+export default DistanceConverter;

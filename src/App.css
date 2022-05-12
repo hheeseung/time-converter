@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: #0a174e;
+}
+
+.App-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.selector {
+  padding: 10px;
+  border: 1px solid #f5d042;
+  background-color: #0a174e;
+  color: #f5d042;
+  width: 300px;
+  font-size: larger;
+}
+
+p {
+  font-size: x-large;
+  font-weight: 600;
+  color: #f5d042;
+}
