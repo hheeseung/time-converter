@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/time-converter/static/css/main.1f929bb1.css",
-    "main.js": "/time-converter/static/js/main.9b07d40a.js",
+    "main.js": "/time-converter/static/js/main.ff118a1d.js",
     "index.html": "/time-converter/index.html",
-    "main.1f929bb1.css.map": "/time-converter/static/css/main.1f929bb1.css.map",
-    "main.9b07d40a.js.map": "/time-converter/static/js/main.9b07d40a.js.map"
+    "main.ff118a1d.js.map": "/time-converter/static/js/main.ff118a1d.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f929bb1.css",
-    "static/js/main.9b07d40a.js"
+    "static/js/main.ff118a1d.js"
   ]
 }
