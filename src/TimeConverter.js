@@ -1,5 +1,58 @@
 import { useState } from "react";
-import "./Converter.css";
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin: 10px;
+  padding: 40px;
+  width: max-content;
+  background-color: ${(props) => props.theme.textColor};
+  color: ${(props) => props.theme.backgroundColor};
+`;
+
+const H1 = styled.h1`
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+`;
+
+const ValueContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+`;
+
+const Label = styled.label`
+  font-weight: 600;
+  color: #0a174e;
+`;
+
+const Input = styled.input.attrs({ type: "number" })`
+  margin-left: 5px;
+  outline: none;
+  border: none;
+  padding: 8px;
+`;
+
+const BtnContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+const Button = styled.button`
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px 5px;
+  background-color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.textColor};
+  &:hover {
+    background-color: #0a174e99;
+    transition: all 0.7s;
+  }
+`;
 
 function TimeConverter() {
   const [time, setTime] = useState("");
@@ -13,33 +66,31 @@ function TimeConverter() {
     setInvert((current) => !current);
   };
   return (
-    <div className="converter-container">
-      <h1>Time Converter</h1>
-      <div className="value-container">
-        <label>Minutes:</label>
-        <input
+    <Container>
+      <H1>Time Converter</H1>
+      <ValueContainer>
+        <Label>Minutes:</Label>
+        <Input
           value={invert ? time * 60 : time}
           onChange={onChange}
-          type="number"
           placeholder="Minutes"
           disabled={invert}
         />
-      </div>
-      <div className="value-container">
-        <label>Hours:</label>
-        <input
+      </ValueContainer>
+      <ValueContainer>
+        <Label>Hours:</Label>
+        <Input
           value={invert ? time : (time / 60).toFixed(1)}
-          type="number"
           placeholder="Hours"
           onChange={onChange}
           disabled={!invert}
         />
-      </div>
-      <div className="button-container">
-        <button onClick={onClick}>Invert</button>
-        <button onClick={reset}>Reset</button>
-      </div>
-    </div>
+      </ValueContainer>
+      <BtnContainer>
+        <Button onClick={onClick}>Invert</Button>
+        <Button onClick={reset}>Reset</Button>
+      </BtnContainer>
+    </Container>
   );
 }
 
